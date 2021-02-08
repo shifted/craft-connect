@@ -37,7 +37,7 @@ class Query extends \yii\db\Query
     {
         return parent::createCommand($db ?? $this->db);
     }
-    
+
     /**
      * @inheritdoc
      */
@@ -132,5 +132,37 @@ class Query extends \yii\db\Query
     public function exists($db = null)
     {
         return parent::exists($db ?? $this->db);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function join($type, $table, $on = '', $params = [])
+    {
+        return parent::join($type,$table, $on, $params);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function andWhere($where, $params = [])
+    {
+        return parent::andWhere($where, $params);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function orWhere($where, $params = [])
+    {
+        return parent::orWhere($where, $params);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function orderBy($order)
+    {
+        return parent::orderBy($order);
     }
 }
